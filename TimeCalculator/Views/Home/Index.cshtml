@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TimeCalculator.Models.AllCalculators>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Select Calculator</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.ActionLink("Date-time Calculator", "Index", "TimeCalculator")                
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Simple Calculator", "Index", "SimpleCalculator")
+            </td>
+
+        </tr>

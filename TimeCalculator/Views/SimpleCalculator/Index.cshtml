@@ -1,0 +1,24 @@
+﻿@model TimeCalculator.Models.SimpleCalculator
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    String algorithmCode = ViewBag.Code;
+}
+
+
+<body>
+
+    <h2> Simple Calculator </h2>
+    @using (Html.BeginForm())
+    {
+        @Html.EditorFor(model => model.InputOne)
+        <span> <br /> </span>
+        @Html.EditorFor(model => model.InputTwo)
+        <input type="submit" class="btn btn-success" />
+        <span> <br /> </span>
+        <h4>Result: </h4>
+        @Html.DisplayFor(model => model.Result)
+            }
+
+</body>
