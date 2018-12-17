@@ -12,7 +12,8 @@ namespace CalculatorCode.Models
         public List<Calculator> CalculatorList = new List<Calculator>()
         {
             new TimeCalculatorModel(),
-            new SimpleCalculator()            
+            new SimpleCalculator(),
+            new CircleCircumferenceRadiusCalculator()
         };
     }
 }

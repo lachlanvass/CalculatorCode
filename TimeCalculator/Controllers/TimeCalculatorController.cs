@@ -50,3 +50,9 @@ public TimeSpan CalculateResult (DateTime InputOne, DateTime InputTwo)
         }
     }
 }
+
+
+
+
+
+
