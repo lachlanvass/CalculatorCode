@@ -8,11 +8,12 @@ namespace CalculatorCode.Models
 {
     public class SimpleCalculator : Calculator
     {
-
-        [Required]
+        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Please enter a valid number")]
         new public int InputOne { get; set; }
-        [Required]
+
+        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Please enter a valid number")]
         new public int InputTwo { get; set; }
+
         new public int Result { get; set; }
         public String Name = "SimpleCalculator";
 

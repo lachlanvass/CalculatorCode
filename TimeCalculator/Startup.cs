@@ -56,7 +56,7 @@ namespace CalculatorCode
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=BinaryCalculator}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

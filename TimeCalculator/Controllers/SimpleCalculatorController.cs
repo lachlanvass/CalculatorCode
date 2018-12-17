@@ -27,7 +27,7 @@ public Double CalculateResult(Double InputOne, Double InputTwo)
 ";
         public IActionResult Index()
         {
-            ViewBag.Code = AlgorithmCode;
+            SetViewBagValues(AlgorithmCode, "Add Two Number Values.");
             return View();
         }
 
@@ -35,10 +35,21 @@ public Double CalculateResult(Double InputOne, Double InputTwo)
         [ValidateAntiForgeryToken]
         public IActionResult Index(SimpleCalculator model)
         {
-            ViewBag.Code = AlgorithmCode;
+            SetViewBagValues(AlgorithmCode, "Add Two Number Values.");
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             model.Result = model.CalculateResult();
             return View(model);
-
+        }
+       
+        public void SetViewBagValues(String algorithmCode, String instructions)
+        {
+            ViewBag.Code = algorithmCode;
+            ViewBag.Instructions = instructions;
         }
     }
 }
