@@ -20,6 +20,11 @@ namespace CalculatorCode.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Index(BinaryCalculator model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             model.ResultInBinary = model.CalculateResultInBinary();
             model.ResultInDecimal = model.CalculateResultInDecimal();
             return View(model);

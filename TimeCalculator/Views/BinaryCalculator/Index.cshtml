@@ -13,13 +13,23 @@
     <h2> Binary Calculator Calculator </h2>
     @using (Html.BeginForm())
     {
+        @Html.ValidationSummary()
+        <br />
         @Html.EditorFor(model => model.InputOne)
+        <span>
+            @Html.ValidationMessageFor(model => model.InputOne)
+        </span>
+
         <span> <br /> </span>
         @Html.EditorFor(model => model.InputTwo)
+        <span>
+            @Html.ValidationMessageFor(model => model.InputTwo)
+        </span>
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
-        <h4>Result: </h4>
+        <h4>Result in binary: </h4>
         @Html.DisplayFor(model => model.ResultInBinary)
+        <h4>Result in decimal: </h4>
         @Html.DisplayFor(model => model.ResultInDecimal)
 
     }
