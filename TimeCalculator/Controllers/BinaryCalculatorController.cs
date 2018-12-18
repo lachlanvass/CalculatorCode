@@ -26,8 +26,24 @@ namespace CalculatorCode.Controllers
                 return View();
             }
 
-            model.ResultInBinary = model.CalculateResultInBinary();
-            model.ResultInDecimal = model.CalculateResultInDecimal();
+            String selectedValue = model.SelectedOperation;
+
+            switch(selectedValue)
+            {
+                case "Add"      : model.ResultInBinary = model.CalculateAdditionResultInBinary();
+                                model.ResultInDecimal = model.CalculateAdditionResultInDecimal();
+                                break;
+                case "Subtract" : model.ResultInBinary = model.CalculateSubtractionResultInBinary();
+                                model.ResultInDecimal = model.CalculateSubtractionResultInDecimal();
+                                break;
+                case "Multiply" : model.ResultInBinary = model.CalculateMultiplicationResultInBinary();
+                                model.ResultInDecimal = model.CalculateMultiplicationResultInDecimal();
+                                break;
+                case "Divide": model.ResultInBinary = model.CalculateDivisionResultInBinary();
+                            model.ResultInDecimal = model.CalculateDivisionResultInDecimal();
+                            break;
+            }
+
             return View(model);
         }
 

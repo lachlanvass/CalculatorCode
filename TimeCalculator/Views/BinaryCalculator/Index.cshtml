@@ -9,10 +9,13 @@
 <body>
     @using (Html.BeginForm())
     {
-        <br />
+        
         @Html.EditorFor(model => model.InputOne)
         <br />
         @Html.EditorFor(model => model.InputTwo)
+        <br />
+        @Html.DropDownListFor(model => model.SelectedOperation,
+                new SelectList(Enum.GetValues(typeof(Operations))), "Select Operation")
         <br />
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
