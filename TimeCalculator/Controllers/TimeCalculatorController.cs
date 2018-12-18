@@ -5,25 +5,10 @@ using CalculatorCode.Models;
 namespace CalculatorCode.Controllers
 {
     public class TimeCalculatorController : Controller
-    {
-        public const String AlgorithmCode =
-@"
-public TimeSpan CalculateResult (DateTime InputOne, DateTime InputTwo)
-{
-    if (InputOne > InputTwo)
-    {
-        return InputTwo - InputOne;
-    }
-    else 
-    {
-        return InputTwo - InputOne;
-    }
-
-}
-";
+    {       
         public IActionResult Index()
         {
-            ViewBag.Code = AlgorithmCode;
+            SetViewBagData();
             return View();
         }
 
@@ -31,7 +16,7 @@ public TimeSpan CalculateResult (DateTime InputOne, DateTime InputTwo)
         [ValidateAntiForgeryToken]
         public IActionResult Index(TimeCalculatorModel model)
         {
-            ViewBag.Code = AlgorithmCode;
+            SetViewBagData();
             // Only show positive values
 
             if (model.InputOne > model.InputTwo)
@@ -45,6 +30,28 @@ public TimeSpan CalculateResult (DateTime InputOne, DateTime InputTwo)
 
             return View(model);
         }
+
+        public void SetViewBagData()
+        {
+            ViewBag.Code = AlgorithmCode;
+            ViewBag.Instructions = "Calculate distant between two dates and times";
+        }
+
+        public const String AlgorithmCode =
+@"
+public TimeSpan CalculateResult (DateTime InputOne, DateTime InputTwo)
+{
+    // Return absolute value
+    if (InputOne > InputTwo)
+    {
+        return InputTwo - InputOne;
+    }
+    else 
+    {
+        return InputTwo - InputOne;
+    }
+}
+";
     }
 }
 
