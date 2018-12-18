@@ -18,16 +18,9 @@ namespace CalculatorCode.Controllers
          * 4. Insert that string into ViewBag.Code for the Controller methods which render the algoritm
          */
 
-        public const String AlgorithmCode =
-@"
-public Double CalculateResult(Double InputOne, Double InputTwo)
-{
-    return InputOne + InputTwo
-}
-";
         public IActionResult Index()
         {
-            SetViewBagValues(AlgorithmCode, "Add Two Number Values.");
+            SetViewBagValues(AlgorithmCode, Instructions);
             return View();
         }
 
@@ -35,14 +28,24 @@ public Double CalculateResult(Double InputOne, Double InputTwo)
         [ValidateAntiForgeryToken]
         public IActionResult Index(SimpleCalculator model)
         {
-            SetViewBagValues(AlgorithmCode, "Add Two Number Values.");
+            SetViewBagValues(AlgorithmCode, Instructions);
 
             if (!ModelState.IsValid)
             {
                 return View();
             }
-
-            model.Result = model.CalculateResult();
+            string selectedOperation = model.SelectedOperation;
+            Console.WriteLine("AAAA: " + selectedOperation);
+            
+            switch (selectedOperation)
+            {
+                case "Add": model.Result = model.CalculateAdditionResult(); break;
+                case "Subtract": model.Result = model.CalculateSubtractionResult(); break;
+                case "Multiply": model.Result = model.CalculateMultiplyResult(); break;
+                case "Divide": model.Result = model.CalculateDivideResult(); break;
+               
+            }
+            
             return View(model);
         }
        
@@ -51,5 +54,30 @@ public Double CalculateResult(Double InputOne, Double InputTwo)
             ViewBag.Code = algorithmCode;
             ViewBag.Instructions = instructions;
         }
+
+        public const String AlgorithmCode =
+@"
+public int CalculateAdditionResult()
+{
+    return InputOne + InputTwo;
+}
+
+public int CalculateSubtractionResult()
+{
+    return InputOne - InputTwo;
+}
+
+public int CalculateMultiplyResult()
+{
+    return InputOne * InputTwo;
+}
+
+public int CalculateDivideResult()
+{
+    return InputOne / InputTwo;
+}
+";
+
+public const String Instructions = "Perform Operations on two numbers.";
     }
 }
