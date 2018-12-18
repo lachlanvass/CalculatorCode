@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CalculatorCode.Models;
+﻿using System.Collections.Generic;
 
 namespace CalculatorCode.Models
 {
