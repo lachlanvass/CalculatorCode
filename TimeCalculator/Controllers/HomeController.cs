@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CalculatorCode.Models;
+using System;
 
 namespace CalculatorCode.Controllers
 {
@@ -32,6 +33,11 @@ namespace CalculatorCode.Controllers
         public IActionResult About()
         {
 
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
             return View();
         }
         
