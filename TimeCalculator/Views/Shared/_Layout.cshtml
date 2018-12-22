@@ -18,6 +18,13 @@
 
     <!-- GOOGLE ADSENSE-->
     <partial name="_GoogleAdsensePartial" />
+
+    <style>
+        .calculatorBody * {
+            margin: 10px 0 0 0;
+            
+        }
+    </style>
 </head>
 <body>
     
@@ -39,7 +46,7 @@
                     @Html.ValidationSummary()
                 </span>
 
-                <div> @RenderBody()</div>
+                <div class="calculatorBody"> @RenderBody()</div>
                 <hr />
 
                 <!-- Reveal code section for each page -->
@@ -52,9 +59,9 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            @*<div class="col-md-3">
                 <h3> Insert Advertisement here</h3>
-            </div>
+            </div>*@
         </div>
     </div>
 

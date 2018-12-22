@@ -9,17 +9,16 @@
 <body>
     @using (Html.BeginForm())
     {
-        
+
         @Html.EditorFor(model => model.InputOne)
         <br />
         @Html.EditorFor(model => model.InputTwo)
         <br />
         @Html.DropDownListFor(model => model.SelectedOperation,
                 new SelectList(Enum.GetValues(typeof(Operations))), "Select Operation")
-        <br />
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
-        <h4>Result in binary: </h4>
+        <h4>Result in binary:</h4>
         @Html.DisplayFor(model => model.ResultInBinary)
         <h4>Result in decimal: </h4>
         @Html.DisplayFor(model => model.ResultInDecimal)

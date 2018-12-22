@@ -10,50 +10,21 @@
     CalculatorList.Add("Circle Circumferance From Diameter Calculator", "CircleCircumferenceDiameter");
     CalculatorList.Add("Binary Calculator", "BinaryCalculator");
 }
-<h2>Select Calculator</h2>
 
 <table class="table">
     <thead>
         <tr>
             <th></th>
+            
         </tr>
-    </thead>
+    </thead
     <tbody>
         @foreach (KeyValuePair<String, String> calcNameAndController in CalculatorList)
         {
-            <tr>
+            <tr class="calculatorLink">
                 <td>
                     @Html.ActionLink(calcNameAndController.Key, "Index", calcNameAndController.Value)
                 </td>
             </tr>
-            
+
         }
-    @*</tbody>
-
-        <tbody>
-            <tr>
-                <td>
-                    @Html.ActionLink("Date-time Calculator", "Index", "TimeCalculator")
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    @Html.ActionLink("Simple Calculator", "Index", "SimpleCalculator")
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.ActionLink("Circle Circumferance From Radius Calculator", "Index", "CircleCircumferenceRadius")
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.ActionLink("Circle Circumferance From Diameter Calculator", "Index", "CircleCircumferenceDiameter")
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.ActionLink("Binary Calculator", "Index", "BinaryCalculator")
-                </td>
-            </tr>*@

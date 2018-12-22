@@ -2,6 +2,8 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    align-content: center;
+    background-color: aquamarine;
 }
 
 .body-content {
@@ -9,4 +11,11 @@ body {
     padding-right: 15px;
 }
 
+#codeBlock {
+    background-color:red;
+}
 
+.calculatorLink {
+    background-color: aquamarine;
+    font-size: 16px;
+}
