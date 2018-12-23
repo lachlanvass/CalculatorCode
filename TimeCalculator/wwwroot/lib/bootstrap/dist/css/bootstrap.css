@@ -6,16 +6,6 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 
-
-#codeBlock {
-    background-color: red;
-}
-
-.calculatorLink {
-    background-color: aquamarine;
-    font-size: 16px;
-}
-
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
