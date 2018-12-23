@@ -9,15 +9,16 @@
     CalculatorList.Add("Circle Circumferance From Radius Calculator", "CircleCircumferenceRadius");
     CalculatorList.Add("Circle Circumferance From Diameter Calculator", "CircleCircumferenceDiameter");
     CalculatorList.Add("Binary Calculator", "BinaryCalculator");
+    CalculatorList.Add("Age Calculator", "AgeCalculator");
 }
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th></th>
             
         </tr>
-    </thead
+    </thead>
     <tbody>
         @foreach (KeyValuePair<String, String> calcNameAndController in CalculatorList)
         {
@@ -28,3 +29,7 @@
             </tr>
 
         }
+
+</tbody>
+
+</table>
