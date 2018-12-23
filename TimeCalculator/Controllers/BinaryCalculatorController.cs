@@ -47,7 +47,7 @@ namespace CalculatorCode.Controllers
         public void SetViewBagValues()
         {
             ViewBag.Code = AlgorithmCode;
-            ViewBag.Instructions = "Add two binary values";
+            ViewBag.Instructions = "Calculate Two Binary Values";
         }
 
         public const String AlgorithmCode =

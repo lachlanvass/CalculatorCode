@@ -70,8 +70,5 @@ namespace CalculatorCode.Models
             result = BinaryValue.DivisionInDecimalFromStrings(InputOne, InputTwo);
             return result;
         }
-
-
-        // Output result in both binary and decimal
     }
 }
