@@ -1,11 +1,10 @@
-
 using System;
 using Microsoft.AspNetCore.Mvc;
 using CalculatorCode.Models;
 
 namespace CalculatorCode.Controllers
 {
-    public class helloCalculatorController : Controller
+    public class PercentageCalculatorController : Controller
     {
 
         public IActionResult Index()
@@ -16,7 +15,7 @@ namespace CalculatorCode.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(helloCalculator model)
+        public IActionResult Index(PercentageCalculator model)
         {
             SetViewBagValues();
             if (!ModelState.IsValid)

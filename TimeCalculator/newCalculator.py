@@ -162,4 +162,21 @@ if (not isdir(calcName + "Calculator")):
 else:
     print("Views directory already exists")
 
+print("Adding new calculator to AllCalculators.CalculatorList<String, String>")
+
+def replace_line(file_name, line_num, text):
+	# Courtsey of Stackoverflow
+	# Peter C. 
+	# At: https://stackoverflow.com/questions/4719438/editing-specific-line-in-text-file-in-python
+	# Added newline to text to avoid having to increment line nume with each usage.
+    lines = open(file_name, 'r').readlines()
+    lines[line_num] = "\n" + text
+    out = open(file_name, 'w')
+    out.writelines(lines)
+    out.close()
+
+chdir(".\Views\Home")
+replace_line("Index.cshtml", 12, "CalculatorList.Add(""{0} Calculator", "{0}Calculator"");".format(calcName))
+print("Done")
+
 print("COMPLETE")

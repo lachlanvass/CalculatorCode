@@ -10,7 +10,7 @@ namespace CalculatorCode.Controllers
         public IActionResult index()
         {
             // Change to loop with list of calculator links provided AllCalculators class
-            return View();
+            return View(allCalculators.CalculatorList);
         }
 
         [HttpPost]

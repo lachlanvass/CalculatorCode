@@ -1,6 +1,4 @@
-﻿@model IEnumerable<CalculatorCode.Models.AllCalculators>
-
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
     SortedList<String, String> CalculatorList = new SortedList<String, String>();
@@ -22,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (KeyValuePair<String, String> calcNameAndController in CalculatorList)
+        @foreach (KeyValuePair<String, String> calcNameAndController in Model)
         {
             <tr class="calculatorLink">
                 <td>
