@@ -1,22 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
-    SortedList<String, String> CalculatorList = new SortedList<String, String>();
-    CalculatorList.Add("Date Time Calculator", "TimeCalculator");
-    CalculatorList.Add("Simple Calculator", "SimpleCalculator");
-    CalculatorList.Add("Circle Circumferance From Radius Calculator", "CircleCircumferenceRadius");
-    CalculatorList.Add("Circle Circumferance From Diameter Calculator", "CircleCircumferenceDiameter");
-    CalculatorList.Add("Binary Calculator", "BinaryCalculator");
-    CalculatorList.Add("Age Calculator", "AgeCalculator");
-    CalculatorList.Add("Hex Calculator", "HexCalculator");
-    CalculatorList.Add("Octal Calculator", "OctalCalculator");
+
 }
 
+<h4> Available: @Model.Count</h4>
 <table class="table table-striped">
     <thead>
         <tr>
             <th></th>
-            
         </tr>
     </thead>
     <tbody>

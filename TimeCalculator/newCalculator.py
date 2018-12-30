@@ -170,13 +170,25 @@ def replace_line(file_name, line_num, text):
 	# At: https://stackoverflow.com/questions/4719438/editing-specific-line-in-text-file-in-python
 	# Added newline to text to avoid having to increment line nume with each usage.
     lines = open(file_name, 'r').readlines()
-    lines[line_num] = "\n" + text
+    lines[line_num] = text
     out = open(file_name, 'w')
     out.writelines(lines)
     out.close()
 
+print(getcwd())
+chdir("..")
+print(getcwd())
 chdir(".\Views\Home")
-replace_line("Index.cshtml", 12, "CalculatorList.Add(""{0} Calculator", "{0}Calculator"");".format(calcName))
-print("Done")
+print(getcwd())
+calcListString = '''\tCalculatorList.Add("{0} Calculator", "{0}Calculator");\n'''.format(calcName)
+
+lineToChange = 15
+lineToChange = 18
+#Navigate back to this file, and increase the lineToChange
+lineToChange += 1
+chdir("..")
+chdir("..")
+print("Incrementing lineToChange in newCalculator.py" + " " + str(lineToChange))
+replace_line("newCalculator.py", 185, "lineToChange = " + str(lineToChange) + "\n")
 
 print("COMPLETE")

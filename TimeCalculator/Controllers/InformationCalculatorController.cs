@@ -1,11 +1,10 @@
-
 using System;
 using Microsoft.AspNetCore.Mvc;
 using CalculatorCode.Models;
 
 namespace CalculatorCode.Controllers
 {
-    public class PingCalculatorController : Controller
+    public class InformationCalculatorController : Controller
     {
 
         public IActionResult Index()
@@ -16,7 +15,7 @@ namespace CalculatorCode.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(PingCalculator model)
+        public IActionResult Index(InformationCalculator model)
         {
             SetViewBagValues();
             if (!ModelState.IsValid)
@@ -24,33 +23,30 @@ namespace CalculatorCode.Controllers
                 return View();
             }
 
-            model.Result = model.CalculatePingTime();
+            String selectedValue = model.SelectedOperation;
+
+            switch(selectedValue)
+            {
+                case "Add"      : 
+                                break;
+                case "Subtract" : 
+                                break;
+                case "Multiply" : 
+                                break;
+                case "Divide": 
+                            break;
+            }
+
             return View(model);
         }
 
         public void SetViewBagValues()
         {
             ViewBag.Code = AlgorithmCode;
-            ViewBag.Instructions = "Enter IPv4 Address and Calculate Ping Time";
+            ViewBag.Instructions = "INSERT INSTRUCTIONS HERE";
         }
 
         public const String AlgorithmCode =
-@"public String CalculatePingTime()
-{
-    Ping ping = new Ping();
-    PingReply reply = ping.Send(InputOne);
-
-    if (!reply.ToString().Equals(""Success""))
-    {
-        return Convert.ToString(reply.RoundtripTime);
-    }
-    else
-    {
-        return reply.ToString();
-    }
-
-}
-
-";
+@"INSERT CODE HERE";
     }
 }

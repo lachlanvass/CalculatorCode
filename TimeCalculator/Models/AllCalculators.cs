@@ -19,6 +19,10 @@ namespace CalculatorCode.Models
             CalculatorList.Add("Age Calculator", "AgeCalculator");
             CalculatorList.Add("Hex Calculator", "HexCalculator");
             CalculatorList.Add("Octal Calculator", "OctalCalculator");
+            CalculatorList.Add("Percentage Calculator", "PercentageCalculator");
+            CalculatorList.Add("Ping Time Calculator", "PingCalculator");
+            CalculatorList.Add("Information Calculator", "InformationCalculator");
+            CalculatorList.Add("Password Strength Calculator", "PasswordStrengthCalculator");
         }
     }
 }

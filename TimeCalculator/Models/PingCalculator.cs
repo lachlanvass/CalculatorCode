@@ -1,41 +1,33 @@
-
 using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Net.NetworkInformation;
 
 namespace CalculatorCode.Models
 {
     public class PingCalculator : Calculator
     {
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputOne { get; set; }
+        [RegularExpression(@"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$", ErrorMessage = "Please enter a valid IPv4 address")]
+        new public String InputOne { get; set; }
+        new public String Result { get; set; }
 
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputTwo { get; set; }
-        new public int Result { get; set; }
-        public SelectList Operations = new SelectList("Add", "Subtract", "Multiply", "Divide");
 
-        public String SelectedOperation { get; set; }
- 
-        public int CalculateAdditionResult()
+        public String CalculatePingTime()
         {
-            return InputOne + InputTwo;
+            Ping ping = new Ping();
+            PingReply reply = ping.Send(InputOne);
+
+            if (!reply.ToString().Equals("Success"))
+            {
+                return Convert.ToString(reply.RoundtripTime);
+            }
+            else
+            {
+                return reply.ToString();
+            }
+
         }
 
-        public int CalculateSubtractionResult()
-        {
-            return InputOne - InputTwo;
-        }
-
-        public int CalculateMultiplyResult()
-        {
-            return InputOne * InputTwo;
-        }
-
-        public int CalculateDivideResult()
-        {
-            return InputOne / InputTwo;
-        }
 
     }
 
