@@ -19,7 +19,15 @@ namespace CalculatorCode.Models
 
             if (!reply.ToString().Equals("Success"))
             {
-                return Convert.ToString(reply.RoundtripTime);
+                if (!reply.RoundtripTime.Equals(0))
+                {
+                    return Convert.ToString(reply.RoundtripTime);
+                }
+                else
+                {
+                    return "Ping Failed";
+                }
+                
             }
             else
             {

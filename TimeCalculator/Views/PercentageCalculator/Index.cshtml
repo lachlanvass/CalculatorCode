@@ -11,16 +11,15 @@
 
     @using (Html.BeginForm())
     {
-        @Html.EditorFor(model => model.InputOne)
-        <span> <br /> </span>
+        @Html.EditorFor(model => model.InputOne) <p> %</p>
         @Html.EditorFor(model => model.InputTwo)
         <br />
         @Html.DropDownListFor(model => model.SelectedOperation,
-                new SelectList(Enum.GetValues(typeof(Operations))), "Select Operation")
+                new SelectList(Enum.GetValues(typeof(PercentageOptions))), "Select Operation")
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
         <h4>Result: </h4>
-        @Html.DisplayFor(model => model.Result)
+        <p>@Html.DisplayFor(model => model.Result) %</p>
 
     }
 </body>

@@ -6,36 +6,37 @@ namespace CalculatorCode.Models
 {
     public class PercentageCalculator : Calculator
     {
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputOne { get; set; }
+        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Please enter a valid number")]
+        new public Double InputOne { get; set; }
 
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputTwo { get; set; }
-        new public int Result { get; set; }
-        public SelectList Operations = new SelectList("Add", "Subtract", "Multiply", "Divide");
+        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Please enter a valid number")]
+        new public Double InputTwo { get; set; }
+        new public Double Result { get; set; }
 
         public String SelectedOperation { get; set; }
- 
-        public int CalculateAdditionResult()
+
+        public double PercentageOf()
         {
-            return InputOne + InputTwo;
+            double result = InputOne * (InputTwo / 100);
+            return result;
         }
 
-        public int CalculateSubtractionResult()
+        public double PercentageDifference()
         {
-            return InputOne - InputTwo;
+            double difference = InputTwo - InputOne;
+            double decimalDifference = difference / InputOne;
+            double result = decimalDifference * 100;
+            return result;
         }
 
-        public int CalculateMultiplyResult()
-        {
-            return InputOne * InputTwo;
-        }
+}
 
-        public int CalculateDivideResult()
-        {
-            return InputOne / InputTwo;
-        }
-
+    public enum PercentageOptions
+    {
+        PercentageOf,
+        Difference
     }
+
+    
 
 }

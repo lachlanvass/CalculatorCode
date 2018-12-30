@@ -25,16 +25,12 @@ namespace CalculatorCode.Controllers
 
             String selectedValue = model.SelectedOperation;
 
-            switch(selectedValue)
+            switch (selectedValue)
             {
-                case "Add"      : 
-                                break;
-                case "Subtract" : 
-                                break;
-                case "Multiply" : 
-                                break;
-                case "Divide": 
-                            break;
+                case "PercentageOf" : model.Result = model.PercentageOf();
+                    break;
+                case "Difference"   : model.Result = model.PercentageDifference();
+                    break;
             }
 
             return View(model);
@@ -43,10 +39,23 @@ namespace CalculatorCode.Controllers
         public void SetViewBagValues()
         {
             ViewBag.Code = AlgorithmCode;
-            ViewBag.Instructions = "INSERT INSTRUCTIONS HERE";
+            ViewBag.Instructions = "Calculate Percentages Between Two Values";
         }
 
         public const String AlgorithmCode =
-@"INSERT CODE HERE";
+@"public double PercentageOf()
+    {
+        double result = InputOne * (InputTwo / 100);
+        return result;
+    }
+
+    public double PercentageDifference()
+    {
+        double difference = InputTwo - InputOne;
+        double decimalDifference = difference / InputOne;
+        double result = decimalDifference * 100;
+        return result;
+    }
+";
     }
 }

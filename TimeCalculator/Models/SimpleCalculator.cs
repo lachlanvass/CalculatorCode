@@ -12,11 +12,8 @@ namespace CalculatorCode.Models
         [RegularExpression(@"^[0-9]+$", ErrorMessage = "Please enter a valid number")]
         new public int InputTwo { get; set; }
         new public int Result { get; set; }
-        public SelectList Operations = new SelectList("Add", "Subtract", "Multiply", "Divide");
 
         public String SelectedOperation { get; set; }
-
-        public String Name = "SimpleCalculator";
  
         public int CalculateAdditionResult()
         {
