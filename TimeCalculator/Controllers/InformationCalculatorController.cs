@@ -23,19 +23,31 @@ namespace CalculatorCode.Controllers
                 return View();
             }
 
-            String selectedValue = model.SelectedOperation;
+            String selectedUnitInputOne = model.SelectedUnitInputOne;
+            String selectedUnitInputTwo = model.SelectedUnitInputTwo;
+            model.InputOne = model.ConvertInputToBits(model.InputOne, selectedUnitInputOne);
+            model.InputTwo = model.ConvertInputToBits(model.InputTwo, selectedUnitInputTwo);
 
-            switch(selectedValue)
-            {
-                case "Add"      : 
-                                break;
-                case "Subtract" : 
-                                break;
-                case "Multiply" : 
-                                break;
-                case "Divide": 
-                            break;
-            }
+            long ResultInBits = model.CalculateAdditionResult();
+
+            model.ResultInBits = ResultInBits;
+            model.ResultInBytes = ResultInBits / 8;
+            model.ResultInKiloBytes = ResultInBits / 8000;
+            model.ResultInMegaBytes = ResultInBits / 800000;
+            model.ResultInGigaBytes = ResultInBits / 800000000;
+            model.ResultInTeraBytes = ResultInBits / 800000000000;
+
+            //switch(selectedValue)
+            //{
+            //    case "Add"      : 
+            //                    break;
+            //    case "Subtract" : 
+            //                    break;
+            //    case "Multiply" : 
+            //                    break;
+            //    case "Divide": 
+            //                break;
+            //}
 
             return View(model);
         }
@@ -43,7 +55,7 @@ namespace CalculatorCode.Controllers
         public void SetViewBagValues()
         {
             ViewBag.Code = AlgorithmCode;
-            ViewBag.Instructions = "INSERT INSTRUCTIONS HERE";
+            ViewBag.Instructions = "Calculate units of information (Bytes, Kilobytes etc.)";
         }
 
         public const String AlgorithmCode =

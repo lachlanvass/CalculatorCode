@@ -12,15 +12,27 @@
     @using (Html.BeginForm())
     {
         @Html.EditorFor(model => model.InputOne)
+        @Html.DropDownListFor(model => model.SelectedUnitInputOne,
+                new SelectList(Enum.GetValues(typeof(InformationUnits))), "Select Unit")
         <span> <br /> </span>
         @Html.EditorFor(model => model.InputTwo)
+        @Html.DropDownListFor(model => model.SelectedUnitInputTwo,
+                new SelectList(Enum.GetValues(typeof(InformationUnits))), "Select Unit")
         <br />
-        @Html.DropDownListFor(model => model.SelectedOperation,
-                new SelectList(Enum.GetValues(typeof(Operations))), "Select Operation")
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
-        <h4>Result: </h4>
-        @Html.DisplayFor(model => model.Result)
+        <h4>Result in Bits: </h4>
+        @Html.DisplayFor(model => model.ResultInBits)
+        <h4>Result in Bytes: </h4>
+        @Html.DisplayFor(model => model.ResultInBytes)
+        <h4>Result in Kilobytes: </h4>
+        @Html.DisplayFor(model => model.ResultInKiloBytes)
+        <h4>Result in Megabytes: </h4>
+        @Html.DisplayFor(model => model.ResultInMegaBytes)
+        <h4>Result in Gigabytes: </h4>
+        @Html.DisplayFor(model => model.ResultInGigaBytes)
+        <h4>Result in Terabytes: </h4>
+        @Html.DisplayFor(model => model.ResultInTeraBytes)
 
     }
 </body>
