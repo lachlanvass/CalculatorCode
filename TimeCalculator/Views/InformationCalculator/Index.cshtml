@@ -1,7 +1,7 @@
 @model CalculatorCode.Models.InformationCalculator
 
 @{
-    ViewData["Title"] = "Information";
+    ViewData["Title"] = "Information Calculator";
 
     String algorithmCode = ViewBag.Code;
 }
@@ -15,9 +15,14 @@
         @Html.DropDownListFor(model => model.SelectedUnitInputOne,
                 new SelectList(Enum.GetValues(typeof(InformationUnits))), "Select Unit")
         <span> <br /> </span>
+        @Html.DropDownListFor(model => model.SelectedOperation,
+                new SelectList(Enum.GetValues(typeof(InformationOperations))), "Select Operation")
+        <span> <br /> </span>
         @Html.EditorFor(model => model.InputTwo)
         @Html.DropDownListFor(model => model.SelectedUnitInputTwo,
                 new SelectList(Enum.GetValues(typeof(InformationUnits))), "Select Unit")
+        <span> <br /> </span>
+
         <br />
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>

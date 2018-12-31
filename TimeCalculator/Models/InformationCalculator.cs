@@ -18,6 +18,7 @@ namespace CalculatorCode.Models
         public long ResultInTeraBytes { get; set; }
         public String SelectedUnitInputOne { get; set; }
         public String SelectedUnitInputTwo { get; set; }
+        public String SelectedOperation { get; set; }
 
         public long ConvertInputToBits(long input, String inputUnit)
         {
@@ -39,9 +40,12 @@ namespace CalculatorCode.Models
 
         public long CalculateAdditionResult()
         {
-            long result;
-            result = InputOne + InputTwo; 
-            return result;
+            return InputOne - InputTwo;
+        }
+
+        public long CalculateSubtractionResult()
+        {
+            return InputOne - InputTwo;
         }
 
     }
@@ -54,6 +58,12 @@ namespace CalculatorCode.Models
         Megabytes,
         Gigabytes,
         Terabytes
+    }
+
+    public enum InformationOperations
+    {
+        Add,
+        Subtract,
     }
 
 }
