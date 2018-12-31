@@ -7,27 +7,10 @@ namespace CalculatorCode.Controllers
     public class HomeController : Controller
     {
         AllCalculators allCalculators = new AllCalculators();
-        public IActionResult index()
+
+        public IActionResult Index()
         {
-            // Change to loop with list of calculator links provided AllCalculators class
-            return View(allCalculators.CalculatorList);
-        }
-
-        [HttpPost]
-        public IActionResult Index(TimeCalculatorModel model)
-        {
-            // Only show positive values
-
-            if (model.InputOne > model.InputTwo)
-            {
-                model.Result = model.CalculateResultReverse();
-            }
-            else
-            {
-                model.Result = model.CalculateTimeSpanResult();
-            }
-
-            return View(model);
+            return View();
         }
 
         public IActionResult About()

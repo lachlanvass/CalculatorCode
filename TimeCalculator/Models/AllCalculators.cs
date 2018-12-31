@@ -22,7 +22,7 @@ namespace CalculatorCode.Models
             CalculatorList.Add("Percentage Calculator", "PercentageCalculator");
             CalculatorList.Add("Ping Time Calculator", "PingCalculator");
             CalculatorList.Add("Information Calculator", "InformationCalculator");
-            CalculatorList.Add("Password Strength Calculator", "PasswordStrengthCalculator");
+           // CalculatorList.Add("Password Strength Calculator", "PasswordStrengthCalculator");
         }
     }
 }
