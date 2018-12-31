@@ -1,16 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using CalculatorCode.Models;
 using System;
 
 namespace CalculatorCode.Controllers
 {
     public class HomeController : Controller
     {
-        AllCalculators allCalculators = new AllCalculators();
 
         public IActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         public IActionResult About()
