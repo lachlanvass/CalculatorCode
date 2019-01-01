@@ -99,7 +99,6 @@ namespace CalculatorCode.Models
         [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
         new public int InputTwo {{ get; set; }}
         new public int Result {{ get; set; }}
-        public SelectList Operations = new SelectList("Add", "Subtract", "Multiply", "Divide");
 
         public String SelectedOperation {{ get; set; }}
  
@@ -161,34 +160,5 @@ if (not isdir(calcName + "Calculator")):
     viewFile.close()
 else:
     print("Views directory already exists")
-
-print("Adding new calculator to AllCalculators.CalculatorList<String, String>")
-
-def replace_line(file_name, line_num, text):
-	# Courtsey of Stackoverflow
-	# Peter C. 
-	# At: https://stackoverflow.com/questions/4719438/editing-specific-line-in-text-file-in-python
-	# Added newline to text to avoid having to increment line nume with each usage.
-    lines = open(file_name, 'r').readlines()
-    lines[line_num] = text
-    out = open(file_name, 'w')
-    out.writelines(lines)
-    out.close()
-
-print(getcwd())
-chdir("..")
-print(getcwd())
-chdir(".\Views\Home")
-print(getcwd())
-calcListString = '''\tCalculatorList.Add("{0} Calculator", "{0}Calculator");\n'''.format(calcName)
-
-lineToChange = 15
-lineToChange = 18
-#Navigate back to this file, and increase the lineToChange
-lineToChange += 1
-chdir("..")
-chdir("..")
-print("Incrementing lineToChange in newCalculator.py" + " " + str(lineToChange))
-replace_line("newCalculator.py", 185, "lineToChange = " + str(lineToChange) + "\n")
 
 print("COMPLETE")

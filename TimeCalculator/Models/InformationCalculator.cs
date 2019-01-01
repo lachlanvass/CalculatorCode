@@ -40,7 +40,7 @@ namespace CalculatorCode.Models
 
         public long CalculateAdditionResult()
         {
-            return InputOne - InputTwo;
+            return InputOne + InputTwo;
         }
 
         public long CalculateSubtractionResult()
@@ -50,6 +50,8 @@ namespace CalculatorCode.Models
 
     }
 
+
+    // Use as options for dropdown menus in InformatationCalculator/Index.cshtml
     public enum InformationUnits
     {
         Bits,
