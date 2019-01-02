@@ -6,6 +6,7 @@ namespace CalculatorCode.Models
 {
     public class GCDandLCMCalculator : Calculator
     { 
+        // Validate inputs
         new public Double InputOne { get; set; }
 
         new public Double InputTwo { get; set; }

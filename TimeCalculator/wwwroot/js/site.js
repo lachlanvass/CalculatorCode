@@ -18,4 +18,18 @@ function revealCalculator() {
 	}
 }
 
+function switchInputs() {
+	// Get input values in variables
+	var inputOneValue = document.getElementById(idOne).value;
+	var inputTwoValue = document.getElementById(idTwo).value;
+
+	// Switch input values
+
+	document.getElementById(idTwo).value = inputOneValue;
+	document.getElementById(idOne).value = inputTwoValue;
+
+	
+
+}
+
 

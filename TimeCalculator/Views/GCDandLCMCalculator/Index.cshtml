@@ -11,10 +11,11 @@
 
     @using (Html.BeginForm())
     {
-        @Html.EditorFor(model => model.InputOne)
+        @Html.EditorFor(model => model.InputOne, new { id = "idOne", value = "" })
         <span> <br /> </span>
-        @Html.EditorFor(model => model.InputTwo)
+        @Html.EditorFor(model => model.InputTwo, new { id = "idTwo", value = "" })
         <br />
+        <button>Click</button>
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
         <h4>GCD Result: </h4>
@@ -25,5 +26,9 @@
 
 
     }
+
+            <br />
+        <button onclick="switchInputs()">Switch</button>
+        <br />
 </body>
 
