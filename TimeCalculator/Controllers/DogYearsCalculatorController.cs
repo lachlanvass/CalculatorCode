@@ -23,6 +23,7 @@ namespace CalculatorCode.Controllers
                 return View();
             }
 
+            model.Result = model.CalculateResult();
 
             return View(model);
         }

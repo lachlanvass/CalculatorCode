@@ -59,7 +59,7 @@ namespace CalculatorCode.Controllers
 viewString = '''@model CalculatorCode.Models.{0}Calculator
 
 @{{
-    ViewData["Title"] = "{0}";
+    ViewData["Title"] = "{0} Calculator";
 
     String algorithmCode = ViewBag.Code;
 }}

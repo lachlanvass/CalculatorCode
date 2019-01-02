@@ -23,6 +23,8 @@ namespace CalculatorCode.Controllers
                 return View();
             }
 
+            model.Result = model.CalculateResult();
+
             return View(model);
         }
 
@@ -33,6 +35,10 @@ namespace CalculatorCode.Controllers
         }
 
         public const String AlgorithmCode =
-@"INSERT CODE HERE";
+@"public int CalculateResult ()
+{
+    return InputOne * 7;
+}
+";
     }
 }

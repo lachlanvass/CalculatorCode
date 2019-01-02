@@ -10,7 +10,7 @@ namespace CalculatorCode.Models
 
         new public int Result { get; set; }
         
-        public int CalculateResut ()
+        public int CalculateResult ()
         {
             return InputOne * 7;
         }
