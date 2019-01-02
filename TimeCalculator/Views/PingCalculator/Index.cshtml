@@ -14,8 +14,8 @@
         @Html.EditorFor(model => model.InputOne)
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
-        <h4>Result: </h4>
-        <p>@Html.DisplayFor(model => model.Result) ms</p>
+        <h4>Result (ms): </h4>
+        @Html.DisplayFor(model => model.Result)
 
     }
 </body>
