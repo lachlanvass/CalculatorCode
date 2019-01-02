@@ -1,0 +1,23 @@
+@model CalculatorCode.Models.CatYearsCalculator
+
+@{
+    ViewData["Title"] = "CatYears";
+
+    String algorithmCode = ViewBag.Code;
+}
+
+
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.EditorFor(model => model.InputOne)
+        <span> <br /> </span>
+        <input type="submit" class="btn btn-success" />
+        <span> <br /> </span>
+        <h4>Result: </h4>
+        @Html.DisplayFor(model => model.Result)
+
+    }
+</body>
+

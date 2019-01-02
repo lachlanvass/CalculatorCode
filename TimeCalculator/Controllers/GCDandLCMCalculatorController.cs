@@ -37,6 +37,25 @@ namespace CalculatorCode.Controllers
         }
 
         public const String AlgorithmCode =
-@"INSERT CODE HERE";
+@"public Double CalculateGCD(Double inputOne, Double inputTwo)
+    {
+        inputOne = Math.Abs(inputOne);
+        inputTwo = Math.Abs(inputTwo);
+
+        for (; ; )
+        {
+            Double remainder = inputOne % inputTwo;
+            if (remainder == 0) return inputTwo;
+            inputOne = inputTwo;
+            inputTwo = remainder;
+        }
+    }
+
+public Double CalculateLCM(Double inputOne, Double inputTwo)
+    {
+        return inputOne * inputTwo / this.CalculateGCD(inputOne, inputTwo);
+    }
+
+";
     }
 }
