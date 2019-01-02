@@ -1,0 +1,35 @@
+@model CalculatorCode.Models.CompoundInterestCalculator
+
+@{
+    ViewData["Title"] = "CompoundInterest Calculator";
+
+    String algorithmCode = ViewBag.Code;
+}
+
+
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.DisplayNameFor(model => model.PrincipalInput)
+        <br />
+        @Html.EditorFor(model => model.PrincipalInput)
+        <br />
+        @Html.DisplayNameFor(model => model.InterestRateInput)
+        <br />
+        @Html.EditorFor(model => model.InterestRateInput)
+        <br />
+        @Html.DisplayNameFor(model => model.TimeInYears)
+        <br />
+        @Html.EditorFor(model => model.TimeInYears)
+        <br />
+        @Html.DropDownListFor(model => model.SelectedCompoundedFrequency,
+                new SelectList(Enum.GetValues(typeof(CompoundedFrequency))), "Select Compound Frequency")
+        <input type="submit" class="btn btn-success" />
+        <span> <br /> </span>
+        <h4>Result: </h4>
+        @Html.DisplayFor(model => model.TotalAccrued)
+
+    }
+</body>
+
