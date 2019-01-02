@@ -52,7 +52,7 @@ namespace CalculatorCode.Controllers
         public void SetViewBagValues()
         {
             ViewBag.Code = AlgorithmCode;
-            ViewBag.Instructions = "Calculate Compound Interest";
+            ViewBag.Instructions = "Calculate Accrued Compound Interest (Principal + Interest)";
         }
 
         public const String AlgorithmCode =

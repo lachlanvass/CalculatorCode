@@ -1,6 +1,8 @@
 from os import chdir, mkdir, getcwd
 from os.path import isfile, isdir
 from sys import argv
+
+# Add argument to clone existing Calculator if they are similar in function.
 calcName = argv[1]
 
 controllerString = '''using System;

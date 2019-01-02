@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CalculatorCode.Models
 {
-    public class CompoundInterestCalculator : Calculator
+    public class SimpleInterestCalculator : Calculator
     {
         [Display(Name = "Principal ($)")]
         public Double PrincipalInput { get; set; }
@@ -14,8 +14,6 @@ namespace CalculatorCode.Models
         public Double TimeInYears { get; set; }
 
         public Double TotalAccrued { get; set; }
-        public Double CompoundFrequencyPerYear { get; set; }
-        public String SelectedCompoundedFrequency { get; set; }
 
         public Double CalculateAccruedAmount(Double principal, Double interestRate, int numberOfTermsPerTime, Double time)
         {
@@ -28,21 +26,11 @@ namespace CalculatorCode.Models
             // A = P(1 + r/n)^nt
             // Convert Interest rate to percentage
             InterestRateInput = InterestRateInput / 100;
-            Double result = PrincipalInput * Math.Pow((1 + InterestRateInput / CompoundFrequencyPerYear), CompoundFrequencyPerYear * TimeInYears);
+            Double result = PrincipalInput * (1 + InterestRateInput * TimeInYears);
             return result;
         }
 
     }
 
-    public enum CompoundedFrequency
-    {
-        Daily,
-        Weekly,
-        Fornightly,
-        Monthly, 
-        Quarterly,
-        SemiAnnually,
-        Yearly,
-    }
 
 }
