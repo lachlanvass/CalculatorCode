@@ -6,35 +6,13 @@ namespace CalculatorCode.Models
 {
     public class PasswordStrengthCalculator : Calculator
     {
+        // Make this client-side to ensure password security
         [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputOne { get; set; }
-
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputTwo { get; set; }
+        public int PasswordInput { get; set; }
+        private readonly long CrackingAttemptsPerHour;
         new public int Result { get; set; }
-        public SelectList Operations = new SelectList("Add", "Subtract", "Multiply", "Divide");
-
-        public String SelectedOperation { get; set; }
  
-        public int CalculateAdditionResult()
-        {
-            return InputOne + InputTwo;
-        }
-
-        public int CalculateSubtractionResult()
-        {
-            return InputOne - InputTwo;
-        }
-
-        public int CalculateMultiplyResult()
-        {
-            return InputOne * InputTwo;
-        }
-
-        public int CalculateDivideResult()
-        {
-            return InputOne / InputTwo;
-        }
+       
 
     }
 

@@ -1,0 +1,27 @@
+@model CalculatorCode.Models.HashCalculator
+
+@{
+    ViewData["Title"] = "Hash Calculator";
+
+    String algorithmCode = ViewBag.Code;
+}
+
+
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.EditorFor(model => model.InputOne)
+        <span> <br /> </span>
+        <br />
+        @Html.DropDownListFor(model => model.SelectedAlgorithm,
+                new SelectList(Enum.GetValues(typeof(HashAlgorithms))), "Select Hashing Algorithm")
+        <input type="submit" class="btn btn-success" />
+        <span> <br /> </span>
+        <h4>Result: </h4>
+        <!-- Word wrap due to long output of SHA512 algorithm-->
+        <p style="word-wrap:break-word">@Html.DisplayFor(model => model.Result) </p>
+
+    }
+</body>
+

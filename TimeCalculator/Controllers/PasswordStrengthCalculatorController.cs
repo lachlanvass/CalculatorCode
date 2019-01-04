@@ -23,20 +23,6 @@ namespace CalculatorCode.Controllers
                 return View();
             }
 
-            String selectedValue = model.SelectedOperation;
-
-            switch(selectedValue)
-            {
-                case "Add"      : 
-                                break;
-                case "Subtract" : 
-                                break;
-                case "Multiply" : 
-                                break;
-                case "Divide": 
-                            break;
-            }
-
             return View(model);
         }
 

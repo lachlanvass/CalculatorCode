@@ -46,26 +46,5 @@ namespace CalculatorCode.Models
         }
 
 
-        //private static long GCD(Double a, Double b)
-        //{
-        //    a = Math.Abs(a);
-        //    b = Math.Abs(b);
-
-        //    for (; ; )
-        //    {
-        //        Double remainder = a % b;
-        //        if (remainder == 0) return b;
-        //        a = b;
-        //        b = remainder;
-        //    }
-        //}
-
-        //public static long LCD(Double a, Double b)
-        //{
-           
-        //    return a * b / Fraction.GCD(a, b);
-        //}
-
-
     }
 }
