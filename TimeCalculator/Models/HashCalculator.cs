@@ -68,7 +68,6 @@ namespace CalculatorCode.Models
             }
         }
 
-
         private StringBuilder bytesToStringBuilder(byte[] bytes)
         {
             StringBuilder builder = new StringBuilder();
