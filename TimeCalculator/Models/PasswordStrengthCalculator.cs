@@ -14,7 +14,7 @@ namespace CalculatorCode.Models
         private readonly long CrackingAttemptsPerHour;
         new public int Result { get; set; }
         public Dictionary<char, int> SymbolsFrequency { get; set; }
-            
+        public long NumberOfCombinations { get; set; }
         // In addition to calculating how long it will take to crack password
         // Assess if password is weak, medium or strong
 
@@ -43,10 +43,33 @@ namespace CalculatorCode.Models
             SymbolsFrequency = TokenizeString(PasswordInput);
         }
 
+        public long CalculatePasswordStrength(String input)
+        {
+            long result = 10;
+            Dictionary<char, int> tokens = TokenizeString(input);
+            int numberOfUniqueSymbols = tokens.Count;
+            int totalCharacters = input.Length;
+            return result;
+        }
+
+
+
+
+
+
+
         public long CalculateCombinations(String input)
         {
-           // Tokenize string to get unique characters
-            Dictionary
+            // Tokenize string to get unique characters
+            long result;
+            Dictionary<char, int> tokens = TokenizeString(input);
+            int numberTokens = new int();
+            foreach(KeyValuePair<char, int> t in tokens)
+            {
+                numberTokens += t.Value;
+            }
+
+            result = Combinations(numberTokens, input.Length);
 
             // print combos too?
             

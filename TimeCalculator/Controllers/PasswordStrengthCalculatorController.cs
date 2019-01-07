@@ -25,6 +25,7 @@ namespace CalculatorCode.Controllers
             }
 
             model.SetSymbolsFrequency();
+            model.NumberOfCombinations = model.CalculateCombinations(model.PasswordInput);
 
             return View(model);
         }

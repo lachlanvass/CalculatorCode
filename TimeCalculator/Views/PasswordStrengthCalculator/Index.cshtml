@@ -19,17 +19,12 @@
             <span> <br /> </span>
             <input type="submit" class="btn btn-success" />
             <span> <br /> </span>
-            @*@if (Model.SymbolsFrequency.Count != 0)
-            {
-                foreach (KeyValuePair<Char, int> pair in Model.SymbolsFrequency)
-                {
-                    <p>Character @pair.Key : @pair.Value</p>
-                }
-            }*@
             <h3>Character frequency: </h3>
             <p style="word-wrap: break-word ">
                 @Html.DisplayFor(model => model.SymbolsFrequency)
             </p>
+            <h3>Number of combinations</h3>
+            <p>@Html.DisplayFor(model => model.NumberOfCombinations)</p>
 
 
         }
