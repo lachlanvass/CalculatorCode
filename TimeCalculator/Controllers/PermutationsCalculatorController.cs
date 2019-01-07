@@ -23,19 +23,15 @@ namespace CalculatorCode.Controllers
                 return View();
             }
 
-            String selectedValue = model.SelectedOperation;
-
-            switch(selectedValue)
+            if (model.NumberOfObjects < model.SampleSize || model.NumberOfObjects < 0)
             {
-                case "Add"      : 
-                                break;
-                case "Subtract" : 
-                                break;
-                case "Multiply" : 
-                                break;
-                case "Divide": 
-                            break;
+                model.Result = 0;
             }
+            else
+            {
+                model.Result = model.CalculateResult();
+            }
+
 
             return View(model);
         }
@@ -43,10 +39,25 @@ namespace CalculatorCode.Controllers
         public void SetViewBagValues()
         {
             ViewBag.Code = AlgorithmCode;
-            ViewBag.Instructions = "INSERT INSTRUCTIONS HERE";
+            ViewBag.Instructions = "Calculate Total Number of Permutations";
         }
 
         public const String AlgorithmCode =
-@"INSERT CODE HERE";
+@"
+public static long Permutations(int noOjObjects, int noChosen)
+{
+    return FactorialDivision(noOjObjects, noOjObjects - noChosen);
+}
+
+private static long FactorialDivision(int topFactorial, int divisorFactorial)
+{
+    long result = 1;
+    for (int i = topFactorial; i > divisorFactorial; i--)
+    {
+        result = result * i;
+    }
+    return result;
+}
+";
     }
 }

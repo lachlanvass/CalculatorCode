@@ -53,59 +53,6 @@ namespace CalculatorCode.Models
         }
 
 
-
-
-
-
-
-        public long CalculateCombinations(String input)
-        {
-            // Tokenize string to get unique characters
-            long result;
-            Dictionary<char, int> tokens = TokenizeString(input);
-            int numberTokens = new int();
-            foreach(KeyValuePair<char, int> t in tokens)
-            {
-                numberTokens += t.Value;
-            }
-
-            result = Combinations(numberTokens, input.Length);
-
-            // print combos too?
-            
-
-            return result;
-        }
- 
-       // Create dedicated combos and permuations calcu
-
-        private long Combinations(int noOfObjects, int noChosen)
-        {
-            return Permutations(noOfObjects, noChosen) / Factorial(noChosen);
-        }
-
-        private long Permutations(int noOjObjects, int noChosen)
-        {
-            return FactorialDivision(noOjObjects, noOjObjects - noChosen);
-        }
-
-        private long Factorial(int i)
-        {
-            if (i <= 1)
-                return 1;
-            return i * Factorial(i - 1);
-        }
-
-        private long FactorialDivision(int topFactorial, int divisorFactorial)
-        {
-            long result = 1;
-            for (int i = topFactorial; i > divisorFactorial; i--)
-            {
-                result = result * i;
-            }
-            return result;
-        }
-
     }
 
 }

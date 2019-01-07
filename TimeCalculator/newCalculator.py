@@ -71,8 +71,12 @@ viewString = '''@model CalculatorCode.Models.{0}Calculator
 
     @using (Html.BeginForm())
     {{
+		@Html.DisplayNameFor(model => model.InputOne)
+		<span> <br /> </span>
         @Html.EditorFor(model => model.InputOne)
         <span> <br /> </span>
+		@Html.DisplayNameFor(model => model.InputTwo)
+		<span> <br /> </span>
         @Html.EditorFor(model => model.InputTwo)
         <br />
         @Html.DropDownListFor(model => model.SelectedOperation,

@@ -11,15 +11,17 @@
 
     @using (Html.BeginForm())
     {
-        @Html.EditorFor(model => model.InputOne)
+        @Html.DisplayNameFor(model => model.NumberOfObjects)
         <span> <br /> </span>
-        @Html.EditorFor(model => model.InputTwo)
+        @Html.EditorFor(model => model.NumberOfObjects)
+        <span> <br /> </span>
+        @Html.DisplayNameFor(model => model.SampleSize)
+        <span> <br /> </span>
+        @Html.EditorFor(model => model.SampleSize)
         <br />
-        @Html.DropDownListFor(model => model.SelectedOperation,
-                new SelectList(Enum.GetValues(typeof(Operations))), "Select Operation")
         <input type="submit" class="btn btn-success" />
         <span> <br /> </span>
-        <h4>Result: </h4>
+        <h4>Result (Permutations): </h4>
         @Html.DisplayFor(model => model.Result)
 
     }

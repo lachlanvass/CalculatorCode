@@ -6,34 +6,45 @@ namespace CalculatorCode.Models
 {
     public class CombinationsCalculator : Calculator
     {
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputOne { get; set; }
+        [Display(Name = "Number of Objects (n)")]
+        public int NumberOfObjects { get; set; }
 
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputTwo { get; set; }
-        new public int Result { get; set; }
+        [Display(Name = "Sample Size (r)")]
+        public int SampleSize { get; set; }
+        new public long Result { get; set; }
 
-        public String SelectedOperation { get; set; }
- 
-        public int CalculateAdditionResult()
+        public long CalculateResult()
         {
-            return InputOne + InputTwo;
+            return Combinations(NumberOfObjects, SampleSize);
         }
 
-        public int CalculateSubtractionResult()
+        public static long Combinations(int noOfObjects, int noChosen)
         {
-            return InputOne - InputTwo;
+            return Permutations(noOfObjects, noChosen) / Factorial(noChosen);
         }
 
-        public int CalculateMultiplyResult()
+        private static long Permutations(int noOjObjects, int noChosen)
         {
-            return InputOne * InputTwo;
+            return FactorialDivision(noOjObjects, noOjObjects - noChosen);
         }
 
-        public int CalculateDivideResult()
+        private static long Factorial(int i)
         {
-            return InputOne / InputTwo;
+            if (i <= 1)
+                return 1;
+            return i * Factorial(i - 1);
         }
+
+        private static long FactorialDivision(int topFactorial, int divisorFactorial)
+        {
+            long result = 1;
+            for (int i = topFactorial; i > divisorFactorial; i--)
+            {
+                result = result * i;
+            }
+            return result;
+        }
+
 
     }
 

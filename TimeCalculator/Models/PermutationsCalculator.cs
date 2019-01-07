@@ -6,34 +6,33 @@ namespace CalculatorCode.Models
 {
     public class PermutationsCalculator : Calculator
     {
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputOne { get; set; }
+        [Display(Name = "Number of Objects (n)")]
+        public int NumberOfObjects { get; set; }
 
-        [RegularExpression(@"^$", ErrorMessage = "Please enter a valid number")]
-        new public int InputTwo { get; set; }
-        new public int Result { get; set; }
+        [Display(Name = "Sample Size (r)")]
+        public int SampleSize { get; set; }
+        new public long Result { get; set; }
 
-        public String SelectedOperation { get; set; }
- 
-        public int CalculateAdditionResult()
+        public long CalculateResult()
         {
-            return InputOne + InputTwo;
+            return Permutations(NumberOfObjects, SampleSize);
         }
 
-        public int CalculateSubtractionResult()
+        public static long Permutations(int noOjObjects, int noChosen)
         {
-            return InputOne - InputTwo;
+            return FactorialDivision(noOjObjects, noOjObjects - noChosen);
         }
 
-        public int CalculateMultiplyResult()
+        private static long FactorialDivision(int topFactorial, int divisorFactorial)
         {
-            return InputOne * InputTwo;
+            long result = 1;
+            for (int i = topFactorial; i > divisorFactorial; i--)
+            {
+                result = result * i;
+            }
+            return result;
         }
 
-        public int CalculateDivideResult()
-        {
-            return InputOne / InputTwo;
-        }
 
     }
 
