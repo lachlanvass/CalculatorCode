@@ -17,11 +17,14 @@ namespace CalculatorCode.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Index(PasswordStrengthCalculator model)
         {
+
             SetViewBagValues();
             if (!ModelState.IsValid)
             {
                 return View();
             }
+
+            model.SetSymbolsFrequency();
 
             return View(model);
         }

@@ -7,21 +7,31 @@
 }
 
 
-@*<body>
+@*@foreach(KeyValuePair<Char, int> pair in Model.SymbolsFrequency)
+{
+    <p>Character @pair.Key : @pair.Value</p>
+}*@
+    <body>
 
-    @using (Html.BeginForm())
-    {
-        @Html.EditorFor(model => model.InputOne)
-        <span> <br /> </span>
-        @Html.EditorFor(model => model.InputTwo)
-        <br />
-        @Html.DropDownListFor(model => model.SelectedOperation,
-                new SelectList(Enum.GetValues(typeof(Operations))), "Select Operation")
-        <input type="submit" class="btn btn-success" />
-        <span> <br /> </span>
-        <h4>Result: </h4>
-        @Html.DisplayFor(model => model.Result)
+        @using (Html.BeginForm())
+        {
+            @Html.EditorFor(model => model.PasswordInput)
+            <span> <br /> </span>
+            <input type="submit" class="btn btn-success" />
+            <span> <br /> </span>
+            @*@if (Model.SymbolsFrequency.Count != 0)
+            {
+                foreach (KeyValuePair<Char, int> pair in Model.SymbolsFrequency)
+                {
+                    <p>Character @pair.Key : @pair.Value</p>
+                }
+            }*@
+            <h3>Character frequency: </h3>
+            <p style="word-wrap: break-word ">
+                @Html.DisplayFor(model => model.SymbolsFrequency)
+            </p>
 
-    }
-</body>*@
+
+        }
+    </body>
 
