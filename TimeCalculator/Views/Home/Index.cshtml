@@ -3,33 +3,40 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 
-    SortedList<String, String> CalculatorList = new SortedList<String, String>();
-    CalculatorList.Add("Date Time Calculator", "TimeCalculator");
-    CalculatorList.Add("Simple Calculator", "SimpleCalculator");
-    CalculatorList.Add("Circle Circumferance From Radius Calculator", "CircleCircumferenceRadius");
-    CalculatorList.Add("Circle Circumferance From Diameter Calculator", "CircleCircumferenceDiameter");
-    CalculatorList.Add("Binary Calculator", "BinaryCalculator");
-    CalculatorList.Add("Age Calculator", "AgeCalculator");
-    CalculatorList.Add("Hex Calculator", "HexCalculator");
-    CalculatorList.Add("Octal Calculator", "OctalCalculator");
-    CalculatorList.Add("Percentage Calculator", "PercentageCalculator");
-    CalculatorList.Add("Ping Time Calculator", "PingCalculator");
-    CalculatorList.Add("Information Calculator", "InformationCalculator");
-    CalculatorList.Add("GCD and LCM Calculator", "GCDandLCMCalculator");
-    CalculatorList.Add("Cat Years Calcuator", "CatYearsCalculator");
-    CalculatorList.Add("Dog Years Calculator", "DogYearsCalculator");
-    CalculatorList.Add("Compound Interest Calculator", "CompoundInterestCalculator");
-    CalculatorList.Add("Simple Interest Calculator", "SimpleInterestCalculator");
-    CalculatorList.Add("Hash Calculator", "HashCalculator");
-    CalculatorList.Add("Password Strength Calculator", "PasswordStrengthCalculator");
-    CalculatorList.Add("Text Tokens Calculator", "TextTokensCalculator");
-    CalculatorList.Add("Combinations Calculator", "CombinationsCalculator");
-    CalculatorList.Add("Permuations Calculator", "PermutationsCalculator");
+    SortedList<String, String> MathCalculators = new SortedList<String, String>();
+    MathCalculators.Add("Simple Calculator", "SimpleCalculator");
+    MathCalculators.Add("Circle Circumferance From Radius Calculator", "CircleCircumferenceRadius");
+    MathCalculators.Add("Circle Circumferance From Diameter Calculator", "CircleCircumferenceDiameter");
+    MathCalculators.Add("Percentage Calculator", "PercentageCalculator");
+    MathCalculators.Add("GCD and LCM Calculator", "GCDandLCMCalculator");
+    MathCalculators.Add("Combinations Calculator", "CombinationsCalculator");
+    MathCalculators.Add("Permuations Calculator", "PermutationsCalculator");
 
+    SortedList<String, String> ComputingCalculators = new SortedList<String, String>();
+    ComputingCalculators.Add("Binary Calculator", "BinaryCalculator");
+    ComputingCalculators.Add("Hex Calculator", "HexCalculator");
+    ComputingCalculators.Add("Octal Calculator", "OctalCalculator");
+    ComputingCalculators.Add("Ping Time Calculator", "PingCalculator");
+    ComputingCalculators.Add("Information Calculator", "InformationCalculator");
+    SortedList<String, String> FinanceCalculators = new SortedList<String, String>();
+    FinanceCalculators.Add("Compound Interest Calculator", "CompoundInterestCalculator");
+    FinanceCalculators.Add("Simple Interest Calculator", "SimpleInterestCalculator");
+    SortedList<String, String> TimeCalculators = new SortedList<String, String>();
+    TimeCalculators.Add("Cat Years Calcuator", "CatYearsCalculator");
+    TimeCalculators.Add("Dog Years Calculator", "DogYearsCalculator");
+    TimeCalculators.Add("Date Time Calculator", "TimeCalculator");
+    TimeCalculators.Add("Age Calculator", "AgeCalculator");
+
+    int TotalCalculators = FinanceCalculators.Count +
+                        TimeCalculators.Count +
+                        ComputingCalculators.Count +
+                        MathCalculators.Count;
 
 }
 
-<h4> Available: @CalculatorList.Count</h4>
+<h4> Available: @TotalCalculators</h4>
+
+<!-- Add each list to own column in Div-->
 <table class="table table-striped">
     <thead>
         <tr>
