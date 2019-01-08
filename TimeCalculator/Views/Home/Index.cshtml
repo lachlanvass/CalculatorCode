@@ -44,7 +44,65 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (KeyValuePair<String, String> calcNameAndController in CalculatorList)
+        <tr>
+            <td>
+                <h3>
+                    Math Calculators
+                </h3>
+            </td>
+        </tr>
+        @foreach (KeyValuePair<String, String> calcNameAndController in MathCalculators)
+        {
+            <tr class="calculatorLink">
+                <td>
+                    @Html.ActionLink(calcNameAndController.Key, "Index", calcNameAndController.Value)
+                </td>
+            </tr>
+
+        }
+
+        <tr>
+            <td>
+                <h3>
+                    Computing Calculators
+                </h3>
+            </td>
+        </tr>
+        @foreach (KeyValuePair<String, String> calcNameAndController in ComputingCalculators)
+        {
+            <tr class="calculatorLink">
+                <td>
+                    @Html.ActionLink(calcNameAndController.Key, "Index", calcNameAndController.Value)
+                </td>
+            </tr>
+
+        }
+
+        <tr>
+            <td>
+                <h3>
+                    Time Calculators
+                </h3>
+            </td>
+        </tr>
+        @foreach (KeyValuePair<String, String> calcNameAndController in TimeCalculators)
+        {
+            <tr class="calculatorLink">
+                <td>
+                    @Html.ActionLink(calcNameAndController.Key, "Index", calcNameAndController.Value)
+                </td>
+            </tr>
+
+        }
+
+        <tr>
+            <td>
+                <h3>
+                    Finance Calculators
+                </h3>
+            </td>
+        </tr>
+        @foreach (KeyValuePair<String, String> calcNameAndController in FinanceCalculators)
         {
             <tr class="calculatorLink">
                 <td>
