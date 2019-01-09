@@ -1,5 +1,6 @@
 ﻿
 @{
+
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 
@@ -32,10 +33,22 @@
     TimeCalculators.Add("Age Calculator", "AgeCalculator");
     TimeCalculators.Add("Time Calculator", "TimeCalculator");
 
+    // All lists here.Change to SortedList<List, String> for list then list name
+    // Create custom class KeyValueList<T, T>
+    SortedList<SortedList<String, String>, String> AllCalculators =
+        new SortedList<SortedList<String, String>, String>();
+    AllCalculators.Add(ComputingCalculators, "Computing Calculators");
+
+    //AllCalculators.Add(FinanceCalculators, "Finance Calculators");
+    //AllCalculators.Add(MathCalculators, "Math Calculators");
+    //AllCalculators.Add(TimeCalculators, "Time Calculators");
+
+
+
     int TotalCalculators = FinanceCalculators.Count +
-                        TimeCalculators.Count +
-                        ComputingCalculators.Count +
-                        MathCalculators.Count;
+                TimeCalculators.Count +
+                ComputingCalculators.Count +
+                MathCalculators.Count;
 
 }
 
@@ -49,6 +62,27 @@
         </tr>
     </thead>
     <tbody>
+        @*@foreach (KeyValuePair<SortedList<String, String>, String> calculatorList in AllCalculators)
+        {
+            <tr>
+                <td>
+                    <h3>
+                        @calculatorList.Value
+                    </h3>
+                </td>
+            </tr>*@
+
+            @*@foreach (KeyValuePair<String, String> calcNameAndController in calculatorList.Key)
+            {
+                <tr class="calculatorLink">
+                    <td>
+                        @Html.ActionLink(calcNameAndController.Key, "Index", calcNameAndController.Value)
+                    </td>
+                </tr>
+
+            }
+        }*@
+
         <tr>
             <td>
                 <h3>
