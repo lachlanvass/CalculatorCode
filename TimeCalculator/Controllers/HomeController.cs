@@ -30,8 +30,8 @@ namespace CalculatorCode.Controllers
             // Must write full path for File - naming conflict with Microsoft.AspNetCore.Mvc;
             string[] adsTxt = System.IO.File.ReadAllLines(@"ads.txt");
             StringBuilder builder = new StringBuilder();
-            foreach (string s in adsTxt)
-                builder.Append(s + "\n");
+            for (byte i = 0; i < adsTxt.Length; i++)
+                builder.Append(adsTxt[i] + "\n");
             return Content(builder.ToString());
         }
         
